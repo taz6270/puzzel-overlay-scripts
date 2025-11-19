@@ -23,7 +23,7 @@ function calendarOverlayHandler() {
 
     // 2) Hent ledige tider fra Logic App
 
-    fetch('GET_SLOTS_URL', {
+    fetch('https://prod-230.westeurope.logic.azure.com:443/workflows/ffa839ceb19540cc93354363935fdf98/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=c9Y1kq_l_huBc5qoIv4bv8otpm6B3HrBD6w509PWvQA', {
 
       method: 'POST',
 
@@ -87,7 +87,7 @@ function calendarOverlayHandler() {
 
       if (!selectedSlot) return;
 
-      fetch('BOOK_SLOT_URL', {
+      fetch('https://prod-179.westeurope.logic.azure.com:443/workflows/88522a9088a04f6884c8f87cb16f8b15/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=Otm0k1vWStEZ-AwyrJOaX-295hP_XJ9CXAs_xou0hi8', {
 
         method: 'POST',
 
@@ -144,4 +144,5 @@ function calendarOverlayHandler() {
   });
 
 }
+
  
