@@ -144,5 +144,6 @@ function calendarOverlayHandler() {
   });
 
 }
-
+window.calendarOverlayHandler = calendarOverlayHandler;
  
+
