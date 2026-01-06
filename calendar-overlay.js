@@ -1,9 +1,7 @@
 function calendarOverlayHandler(overlayElement) {
-  // Ændring 1: Funktionen tager nu 'overlayElement' som argument
 
   return new Promise((resolve, reject) => {
     
-    // Ændring 1 fortsat: Vi bruger det overførte element i stedet for at søge efter ID
     const root = overlayElement; 
 
     // 1) HTML-layout
@@ -80,23 +78,18 @@ function calendarOverlayHandler(overlayElement) {
       })
         .then(r => r.json())
         .then(result => {
-          // Ændring 3: Clean up HTML
           root.innerHTML = '';
 
-          // Ændring 2: Resolve med boolean (true ved succes)
           if (result.status === 'ok' || result.bookingId) {
              resolve(true); 
           } else {
-             // Hvis logikken returnerer en fejlstatus
              resolve(false);
           }
         })
         .catch(err => {
           console.error(err);
-          // Ændring 3: Clean up HTML ved fejl
           root.innerHTML = '';
           
-          // Ændring 2: Resolve med boolean (false ved fejl)
           resolve(false); 
         });
     };
@@ -104,3 +97,4 @@ function calendarOverlayHandler(overlayElement) {
 }
 
 window.calendarOverlayHandler = calendarOverlayHandler;
+
